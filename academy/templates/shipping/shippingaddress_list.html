@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}User Addresses{% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for addr in object_list %}
+            <li>{{addr.user}} - {{addr.zipcode}} - {{addr.number}} - {{addr.city}}</li>
+        {% endfor %}
+    </ul>
+<a href="{% url 'address-create' %}">Add new Address</a>
+{% endblock %}
